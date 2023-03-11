@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/contact.css">
+
 </head>
 <body>
     <h1>contacts</h1>
@@ -14,10 +15,12 @@
             <li class='enteredContact' data-id='<%=el._id%>'>
                 <span><%= el.name %></span>
                 <span><%= el.number %></span>
-                <span class='del'> Delete </span>
+                <span class='del'> Delete Button</span>
             </li>
         <% }) %>    
     </ul>
     <a href="/">Home page</a>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

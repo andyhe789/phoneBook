@@ -9,6 +9,5 @@ router.post('/createContact', homeController.createContact)
 
 router.get('/getController', contactController.getContacts)
 
-router.delete('/deleteController', contactController.deleteContent)
 
 module.exports = router
