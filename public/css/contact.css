@@ -2,14 +2,35 @@ body{
     background-color: lightgray;
 }
 
-ul{
+ul,ol{
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+#contactHeader{
+    background-color: gray;
+    margin-bottom: 10px
+}
 
-span{
-    border: 3px solid black;
+.enteredContact, #contactHeaderList{
+    display: grid;
+    grid-template-areas: 
+    'a b c';
+    grid-template-columns: 100px 1fr 100px;
+}
+
+#dropDownNav{
+    display: grid;
+    grid-template-areas: 
+    'call message info';
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    display: none;
+}
+.dropdown{
 
 }
 
+span{
+    border: 3px solid black;
+}

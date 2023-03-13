@@ -10,13 +10,25 @@
 </head>
 <body>
     <h1>contacts</h1>
+    <ol id="contactHeader">
+        <li id="contactHeaderList">
+            <span class="ejsName">Name</span>
+            <span class="ejsNumber">Number</span>
+            <span class='del'> Delete Button</span>
+        </li>
+    </ol>
     <ul>
         <% contact.forEach( el => { %>
             <li class='enteredContact' data-id='<%=el._id%>'>
-                <span><%= el.name %></span>
-                <span><%= el.number %></span>
+                <span class="ejsName"><%= el.name %></span>
+                <span class="ejsNumber"><%= el.number %></span>
                 <span class='del'> Delete Button</span>
             </li>
+            <ol id="dropDownNav">
+                <li class="dropDown"> Call</li>
+                <li class="dropDown"> Message</li>
+                <li class="dropDown"> Info</li>
+            </ol>
         <% }) %>    
     </ul>
     <a href="/">Home page</a>
