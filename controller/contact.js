@@ -11,10 +11,24 @@ module.exports = {
     },
     deleteContact: async (req, res) =>{
         console.log(req.body.contactIdFromJSFile)
+        console.log(req.body.toggleStatusFromJSFile)
         try{
             await Contacts.findOneAndDelete({_id: req.body.contactIdFromJSFile})
             console.log('User Deleted')
             res.json('Deleted It')
+        }catch(err){
+            console.log(err)
+        }
+    },
+    putNav: async(req, res) =>{
+        console.log(req.body.contactIdFromJSFile)
+        console.log(req.body.toggleStatus)
+        try{
+            await Contacts.findOneAndUpdate({_id: req.body.contactIdFromJSFile},{
+                toggle: true
+            })
+            console.log('Toggle True')
+            res.json('Toggle True')
         }catch(err){
             console.log(err)
         }

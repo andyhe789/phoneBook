@@ -19,12 +19,12 @@
     </ol>
     <ul>
         <% contact.forEach( el => { %>
-            <li class='enteredContact' data-id='<%=el._id%>'>
+            <li class='enteredContact' data-id='<%=el._id%>' data-toggle='<%=el.toggle%>'>
                 <span class="ejsName"><%= el.name %></span>
                 <span class="ejsNumber"><%= el.number %></span>
                 <span class='del'> Delete Button</span>
             </li>
-            <ol id="dropDownNav">
+            <ol class='<%= el.toggle === true ? 'toggleTrue' : 'toggleOff'%> dropDownNav'>
                 <li class="dropDown"> Call</li>
                 <li class="dropDown"> Message</li>
                 <li class="dropDown"> Info</li>

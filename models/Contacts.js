@@ -8,6 +8,10 @@ const ContactsSchema = new mongoose.Schema({
     number:{
         type: Number,
         required: true,
+    },
+    toggle:{
+        type: Boolean,
+        required: true
     }
 })
 
