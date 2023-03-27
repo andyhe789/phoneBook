@@ -34,8 +34,9 @@ async function putNav(){
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'contactIdFromJSFile': contactID,
-                'toggleStatusFromJSFile': toggleStatus
+                'toggleStatusFromJSFile': toggleStatus,
+                'contactIdFromJSFile': contactID
+                
             })
         })
         const data = await response.json()
