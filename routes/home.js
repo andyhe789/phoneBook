@@ -3,11 +3,14 @@ const router = express.Router()
 const homeController = require('../controller/home')
 const contactController = require('../controller/contact')
 
+
 router.get('/', homeController.getIndex)
 
 router.post('/createContact', homeController.createContact)
 
-router.get('/getController', contactController.getContacts)
+router.get('/getContacts', contactController.getContacts)
+
+
 
 
 

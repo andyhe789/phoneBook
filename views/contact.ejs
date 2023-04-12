@@ -9,30 +9,38 @@
 
 </head>
 <body>
-    <h1>contacts</h1>
-    <ol id="contactHeader">
-        <li id="contactHeaderList">
-            <span class="ejsName">Name</span>
-            <span class="ejsNumber">Number</span>
-            <span class='del'> Delete Button</span>
-        </li>
-    </ol>
-    <ul>
-        <% contact.forEach( el => { %>
-            <li class='enteredContact' data-id='<%=el._id%>' data-toggle='<%=el.toggle%>'>
-                <span class="ejsName"><%= el.name %></span>
-                <span class="ejsNumber"><%= el.number %></span>
+    <h1 id="ContactHeader">contacts</h1>
+    <div class="contactBody">
+        <ol>
+            <li id="contactHeaderList">
+                <span class="ejsName">Name</span>
+                <span class="ejsNumber">Number</span>
                 <span class='del'> Delete Button</span>
             </li>
-            <ol class='<%= el.toggle === true ? 'toggleTrue' : 'toggleOff'%> dropDownNav'>
-                <li class="dropDown"> Call</li>
-                <li class="dropDown"> Message</li>
-                <li class="dropDown"> Info</li>
-            </ol>
-        <% }) %>    
-    </ul>
-    <a href="/">Home page</a>
-
+        </ol>
+        <ul>
+            <% contact.forEach( el => { %>
+                <label class="dropDownMenu">
+                    <li class='enteredContact' data-id='<%=el._id%>' data-toggle="el.toggle" >
+                        <span class="ejsName <%= el.toggle === true ? 'dropped' : 'notDropped'%>"><%= el.name %></span>
+                        <span class="ejsNumber <%= el.toggle === true ? 'dropped' : 'notDropped'%>"><%= el.number %></span>
+                        <span class='del'> Delete Button</span>
+                    </li>
+                </label>
+                <div class='dropDownNav <%= el.toggle === true ? 'dropped' : 'notDropped'%>'>
+                    <a href="#" class="dropDownChild">Call</a>
+                    <a href="#" class="dropDownChild">Message</a>
+                    <a href="#" class="dropDownChild">Info</a>
+                </div>
+            <% }) %>    
+        </ul>
+    </div>
+    <div class="footer">
+        <a href="/">Home</a>
+        <a href="/contact">Contacts</a>
+        <a href="/call">Call</a>
+    </div>
+    
     <script src="js/main.js"></script>
 </body>
 </html>

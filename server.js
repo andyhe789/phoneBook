@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const homeRoutes = require('./routes/home')
 const contactRoutes = require('./routes/contact')
+const callRoutes = require('./routes/call')
 
 const connectDB = require('./config/database')
 require('dotenv').config({path: './config/.env'})
@@ -15,6 +16,8 @@ connectDB()
 
 app.use('/', homeRoutes)
 app.use('/contact', contactRoutes)
+app.use('/call', callRoutes)
+
 
 
 app.listen(process.env.PORT, ()=>{
