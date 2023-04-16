@@ -22,13 +22,25 @@ module.exports = {
     },
     putNav: async(req, res) =>{
         console.log(req.body.contactIdFromJSFile)
-        console.log(req.body.toggleStatus)
         try{
             await Contacts.findOneAndUpdate({_id: req.body.contactIdFromJSFile},{
                 toggle: true
             })
             console.log('Toggle True')
             res.json('Toggle True')
+        }catch(err){
+            console.log(err)
+        }
+    },
+
+    putNavHide: async(req, res) =>{
+        console.log(req.body.contactIdFromJSFile)
+        try{
+            await Contacts.findOneAndUpdate({_id: req.body.contactIdFromJSFile},{
+                toggle: false
+            })
+            console.log('Toggle False')
+            res.json('Toggle False')
         }catch(err){
             console.log(err)
         }
