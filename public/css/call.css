@@ -1,3 +1,40 @@
+body{
+    background-color: gray;
+}
+.header{
+    margin-top: 300px;
+}
+.body{
+    padding-bottom: 300px;
+    margin: 0;
+    height: 100%;
+}
+
+.TextReader{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.numPad{
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 5em;
+}
+
+.keypad{
+    margin: none;
+    display: grid;
+    grid-template-areas: 
+    'a b c';
+    justify-content: center;
+    gap: 1em 8em;
+}
+
+.callButton{
+    text-align: center;
+}
+
+
 .footer{
     display: grid;
     bottom: 0;
@@ -18,7 +55,7 @@
 
 .footer > a:active{
     text-decoration: dotted;
-    background-color: gray;
+    background-color: rgb(49, 49, 49);
     color: cyan;
     border-radius: 2em;
 }
