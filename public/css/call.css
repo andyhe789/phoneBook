@@ -24,10 +24,18 @@ body{
 .keypad{
     margin: none;
     display: grid;
-    grid-template-areas: 
-    'a b c';
+    grid-template-columns: repeat(3, 150px);
     justify-content: center;
-    gap: 1em 8em;
+    gap: 1em 5%;
+    outline: none;
+}
+.keypad > button{
+    cursor: pointer;
+    font-size: 5em;
+    outline: none;
+}
+.keypad > button:hover{
+    background-color: rgb(155, 124, 124);
 }
 
 .callButton{
