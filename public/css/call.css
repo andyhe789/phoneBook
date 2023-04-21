@@ -10,9 +10,12 @@ body{
     height: 100%;
 }
 
-.TextReader{
-    border: 1px solid black;
+#screen{
     text-align: center;
+
+}
+#screen > input{
+    width: 50%;
 }
 
 .numPad{
