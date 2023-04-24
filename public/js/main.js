@@ -14,6 +14,7 @@ Array.from(navClickHide).forEach((el)=>{
 
 async function deleteContact(){
     const contactID = this.parentNode.dataset.id
+    
     try{
         const response = await fetch('contact/deleteContact',{
             method: 'delete',

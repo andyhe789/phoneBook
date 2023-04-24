@@ -1,13 +1,18 @@
-const buttons = document.querySelectorAll('[data-number]')
-let screenInput = document.getElementById('display')
+const numButton = document.querySelectorAll('.numPad')
+const callBut = document.querySelectorAll("#callButton")
 
-for(let i = 0; i <buttons.length; i++){
-    buttons[i].addEventListener('click', function(){
-        screenInput.value += this.value;
-        console.log('pressed')
-    })
+numButton.forEach((el)=>{
+    el.addEventListener('click', printNum)
+})
+
+callBut.forEach((el)=>{
+    el.addEventListener('click', calling)
+})
+
+function printNum(){
+    const contactID = this.dataset.number
+    console.log(contactID)
 }
-
-function show(){
-    console.log('1')
+function calling(){
+    console.log('callllll')
 }

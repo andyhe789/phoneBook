@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/call.css">
-    <script src="js/call.js"></script>
+
 </head>
 <body>
     <div class="header">
@@ -15,20 +15,20 @@
     <div class="body">
         <div id="screen"><input type="text" name="display" id="display" disabled></div>
         <ul class="keypad">
-            <button data-number>1</button>
-            <button data-number>2</button>
-            <button data-number>3</button>
-            <button data-number>4</button>
-            <button data-number>5</button>
-            <button data-number>6</button>
-            <button data-number>7</button>
-            <button data-number>8</button>
-            <button data-number>9</button>
-            <button data-number>*</button>
-            <button data-number>0</button>
-            <button data-number>#</button>
+            <button data-number="1" class="numPad">1</button>
+            <button data-number="2" class="numPad">2</button>
+            <button data-number="3" class="numPad">3</button>
+            <button data-number="4" class="numPad">4</button>
+            <button data-number="5" class="numPad">5</button>
+            <button data-number="6" class="numPad">6</button>
+            <button data-number="7" class="numPad">7</button>
+            <button data-number="8" class="numPad">8</button>
+            <button data-number="9" class="numPad">9</button>
+            <button data-number="*" class="numPad">*</button>
+            <button data-number="0" class="numPad" id="zero">0</button>
+            <button data-number="#" class="numPad">#</button>
         </ul>
-        <button class="callButton">Call</button>
+        <button id="callButton">Call</button>
     </div>
 
     <div class="footer">
@@ -37,6 +37,6 @@
         <a href="/call">Call</a>
     </div>
 
-
+    <script src="js/call.js"></script>
 </body>
 </html>
