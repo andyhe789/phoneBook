@@ -2,7 +2,7 @@ body{
     background-color: gray;
 }
 .header{
-    margin-top: 300px;
+    margin-top: 15%;
 }
 .body{
     padding-bottom: 300px;
@@ -27,6 +27,7 @@ body{
 .keypad{
     margin: none;
     display: grid;
+    padding: 0;
     grid-template-columns: repeat(3, 150px);
     justify-content: center;
     gap: 1em 5%;
@@ -41,10 +42,18 @@ body{
     background-color: rgb(155, 124, 124);
 }
 
-.callButton{
-    text-align: center;
+
+.phoneMenu{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
 }
 
+.phoneMenu > button{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
 
 .footer{
     display: grid;
