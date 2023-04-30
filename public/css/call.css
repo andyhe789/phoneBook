@@ -2,20 +2,24 @@ body{
     background-color: gray;
 }
 .header{
-    margin-top: 15%;
+    margin-top: 100px;
 }
 .body{
-    padding-bottom: 300px;
     margin: 0;
     height: 100%;
 }
 
 #screen{
     text-align: center;
-
+    padding-bottom: 50px;
 }
+
+
 #screen > input{
     width: 50%;
+    font-size: 4em;
+    height: 50px;
+    text-align: right;
 }
 
 .numPad{
@@ -24,8 +28,8 @@ body{
     font-size: 5em;
 }
 
-.keypad{
-    margin: none;
+.keypad, .phoneMenu{
+    margin: 0;
     display: grid;
     padding: 0;
     grid-template-columns: repeat(3, 150px);
@@ -44,15 +48,15 @@ body{
 
 
 .phoneMenu{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    padding-top: 1em;
 }
 
 .phoneMenu > button{
     height: 100px;
     width: 100px;
     border-radius: 50%;
+    
 }
 
 .footer{
