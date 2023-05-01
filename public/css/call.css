@@ -2,18 +2,25 @@ body{
     background-color: gray;
 }
 .header{
-    margin-top: 300px;
+    margin-top: 100px;
 }
 .body{
-    padding-bottom: 300px;
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
-.TextReader{
-    border: 1px solid black;
+#screen{
     text-align: center;
+    padding-bottom: 50px;
+}
+
+
+#screen > input{
+    width: 50%;
+    font-size: 4em;
+    height: 50px;
+    text-align: right;
 }
 
 .numPad{
@@ -22,19 +29,36 @@ body{
     font-size: 5em;
 }
 
-.keypad{
-    margin: none;
+.keypad, .phoneMenu{
+    margin: 0;
     display: grid;
-    grid-template-areas: 
-    'a b c';
+    padding: 0;
+    grid-template-columns: repeat(3, 150px);
     justify-content: center;
-    gap: 1em 8em;
+    gap: 1em 5%;
+    outline: none;
+}
+.keypad > button{
+    cursor: pointer;
+    font-size: 5em;
+    outline: none;
+}
+.keypad > button:hover{
+    background-color: rgb(155, 124, 124);
 }
 
-.callButton{
-    text-align: center;
+
+.phoneMenu{
+    justify-items: center;
+    padding-top: 1em;
 }
 
+.phoneMenu > button{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    
+}
 
 .footer{
     display: grid;
