@@ -20,6 +20,17 @@ class Phone{
                  this.displayText += '-'
                  break;
         }
+        if(this.displayLength > 10){
+            this.displayText = this.displayText.replace('-','')
+            console.log('over 10')
+        }
+        if(this.displayLength >= 8 && this.displayLength <= 10){
+            this.splitText = this.displayText.toString().split('')
+            this.parenthesesText = this.splitText.splice(0,0,'(')
+            // this.parenthesesText = this.splitText.splice(4,0,')')
+
+            console.log(this.parenthesesText)
+        }
     }
     
     updateDisplay(){
