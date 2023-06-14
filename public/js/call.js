@@ -6,6 +6,9 @@ class Phone{
 
     clear(){
         this.displayText = this.displayText.toString().slice(0,-1)
+        if(this.displayLength == 4){
+            this.displayText = this.displayText.toString().slice(0,-1)
+        }
     }
 
     appendNumber(number){
@@ -15,22 +18,24 @@ class Phone{
     conditional(){
         this.displayLength = this.displayText.toString().length
         console.log(this.displayLength)
-        if(this.displayLength == 3){
-            this.displayText.toString().split('').push('-')
-            console.log(this.displayText)
+        if(this.displayLength >= 3){
+            let arr = this.displayText.toString().split('')
+            arr[3] = '-'
+            this.displayText = arr.join('')
+            console.log(arr)
         }
         if(this.displayLength > 10){
             this.displayText = this.displayText.replace('-','')
             console.log('over 10')
         }
 
-        if(this.displayLength >= 8 && this.displayLength <= 10){
-            this.splitText = this.displayText.toString().split('')
-            this.parenthesesText = this.splitText.splice(0,0,'(')
-            // this.parenthesesText = this.splitText.splice(4,0,')')
+        // if(this.displayLength >= 8 && this.displayLength <= 10){
+        //     this.splitText = this.displayText.toString().split('')
+        //     this.parenthesesText = this.splitText.splice(0,0,'(')
+        //     // this.parenthesesText = this.splitText.splice(4,0,')')
 
-            console.log(this.parenthesesText)
-        }
+        //     console.log(this.parenthesesText)
+        // }
     }
     
     updateDisplay(){
