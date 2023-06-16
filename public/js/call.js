@@ -18,14 +18,14 @@ class Phone{
     conditional(){
         this.displayLength = this.displayText.toString().length
         console.log(this.displayLength)
-        if(this.displayLength >= 3){
+        if(this.displayLength >= 3 && this.displayLength <= 10){
             let arr = this.displayText.toString().split('')
             arr[3] = '-'
             this.displayText = arr.join('')
             console.log(arr)
         }
         if(this.displayLength > 10){
-            this.displayText = this.displayText.replace('-','')
+            this.displayText = this.displayText.toString().replace('-', '')
             console.log('over 10')
         }
 
