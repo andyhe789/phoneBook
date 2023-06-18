@@ -22,20 +22,20 @@ class Phone{
             let arr = this.displayText.toString().split('')
             arr[3] = '-'
             this.displayText = arr.join('')
-            console.log(arr)
+            // console.log(arr)
         }
         if(this.displayLength > 10){
             this.displayText = this.displayText.toString().replace('-', '')
             console.log('over 10')
         }
 
-        // if(this.displayLength >= 8 && this.displayLength <= 10){
-        //     this.splitText = this.displayText.toString().split('')
-        //     this.parenthesesText = this.splitText.splice(0,0,'(')
-        //     // this.parenthesesText = this.splitText.splice(4,0,')')
-
-        //     console.log(this.parenthesesText)
-        // }
+        if(this.displayLength >= 8 && this.displayLength <= 10 && this.displayText != ('(')){
+            let addedParen = ''
+             let arr = this.displayText.toString().split('')
+             addedParen = '(' + this.displayText.slice(0,3) + ')' + this.displayText.slice(3,this.displayLength)
+             console.log(arr)
+             this.displayText = addedParen
+        }
     }
     
     updateDisplay(){
