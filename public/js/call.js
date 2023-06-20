@@ -15,27 +15,16 @@ class Phone{
         this.displayText = this.displayText.toString() + number.toString()
     }
 
-    conditional(){
+    phoneFormat(){
         this.displayLength = this.displayText.toString().length
         console.log(this.displayLength)
-        if(this.displayLength >= 3 && this.displayLength <= 10){
-            let arr = this.displayText.toString().split('')
-            arr[3] = '-'
-            this.displayText = arr.join('')
-            // console.log(arr)
+        if(this.displayLength > 4 && this.displayLength < 8 && this.displayText.includes('-') === false){
+            this.displayText = this.displayText.slice(0,3) + '-' + this.displayText.slice(3,6)
+            console.log(this.displayText.includes('-'))
         }
-        if(this.displayLength > 10){
-            this.displayText = this.displayText.toString().replace('-', '')
-            console.log('over 10')
-        }
-
-        if(this.displayLength >= 8 && this.displayLength <= 10 && this.displayText != ('(')){
-            let addedParen = ''
-             let arr = this.displayText.toString().split('')
-             addedParen = '(' + this.displayText.slice(0,3) + ')' + this.displayText.slice(3,this.displayLength)
-             console.log(arr)
-             this.displayText = addedParen
-        }
+        // else if(this.displayLength >= 8){
+        //     this.displayText = '(' + this.displayText.slice(0,3) +')' + this.displayText.slice(3,6) + '-' 
+        // }
     }
     
     updateDisplay(){
@@ -56,13 +45,13 @@ numButton.forEach((el)=>{
     el.addEventListener('click', ()=>{
         phone.appendNumber(el.innerText)
         phone.updateDisplay()
-        phone.conditional()
+        phone.phoneFormat()
     })
 })
 
 backButton.addEventListener('click', ()=>{
     phone.clear()
     phone.updateDisplay()
-    phone.conditional()
+    phone.phoneFormat()
 })
 
