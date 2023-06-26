@@ -32,7 +32,7 @@ class Phone{
             this.displayText = '(' + this.displayText.slice(0,3) +')' + this.displayText.slice(3,6) + '-' + this.displayText.slice(6)
             console.log('as')
         }
-        if(this.displayLength >= 10){
+        if(this.displayLength >= 11){
             this.displayText = this.displayText.replace(/[-()]/gi,'')
             console.log(this.displayLength)
         }
@@ -40,20 +40,19 @@ class Phone{
     
     backspaceFormat(){
         this.displayLength = this.displayText.toString().replace(/[-()]/gi,'').length
-        if(this.displayLength <= 7){
+        if(this.displayLength == 7){
             this.displayText = this.displayText.replace(/[()-]/gi,'')
             this.displayText = this.displayText.split('')
-            // this.displayText = this.displayText.slice(0,3) + '-' + this.displayText.slice(3,6)
-            console.log(this.displayLength)
+            this.displayText.splice(3,0,'-')
+            this.displayText = this.displayText.join('')
         }
-        console.log(' dele')
-        // if(this.displayLength >= 8 && this.displayLength <= 11 && this.displayText.includes('(') === false){
-        //     console.log(this.displayLength)
-        //     console.log('deas')
-        // }
-        // if(this.displayLength <= 7){
-        //     this.displayText = this.displayText.replace(/[()]/gi,'')
-        // }
+        if(this.displayLength == 10){
+            this.displayText = this.displayText.replace('-','')
+            this.displayText = '(' + this.displayText.slice(0,3) +')' + this.displayText.slice(3,6) + '-' + this.displayText.slice(6)
+        }
+        if(this.displayLength == 3){
+            this.displayText = this.displayText.replace('-','')
+        }
     }
 
     updateDisplay(){
