@@ -7,9 +7,6 @@ class Phone{
 
     clear(){
         this.displayText = this.displayText.toString().slice(0,-1)
-        // if(this.displayLength == 5){
-        //     this.displayText = this.displayText.replace('-','')
-        // }
     }
 
     appendNumber(number){
@@ -17,24 +14,45 @@ class Phone{
     }
 
     phoneFormat(){
-        this.displayLength = this.displayText.toString().replace(/[-()]/gi,'').length
-        let specialCharacters = '( ) -'
+        this.displayLength = this.displayText.toString().replace(/[-() ]/gi,'').length
+        let firstNum = this.displayText.toString().split('').shift()
         console.log(this.displayLength)
-        if(this.displayLength <= 3){
-            this.displayText = this.displayText.slice(0,3)
+        if(firstNum == 1){
+            if(this.displayLength == 2){
+                this.displayText = '1' + this.displayText.slice(1)
+                console.log('first', firstNum )
+            }
+            if(this.displayLength == 3){
+                this.displayText = '1 (' + this.displayText.slice(1,3)
+                console.log('two', firstNum)
+            }
+            if(this.displayLength == 4){
+                this.displayText = '1 (' + this.displayText.slice(1,3) + ') ' + this.displayText.slice(3,4)
+                console.log('as')
+                console.log('three', firstNum)
+            }
+            if(this.displayLength >= 11){
+                this.displayText = this.displayText.replace(/[-()]/gi,'')
+                console.log(this.displayLength)
+            }
         }
-        if(this.displayLength == 3 && this.displayLength < 8 && this.displayText.includes('-') === false){
-            this.displayText = this.displayText.slice(0,3) + '-' + this.displayText.slice(3,6)
-            console.log('run')
-        }
-        if(this.displayLength >= 8 && this.displayLength <= 11 && this.displayText.includes('(') === false){
-            this.displayText = this.displayText.replace('-','')
-            this.displayText = '(' + this.displayText.slice(0,3) +')' + this.displayText.slice(3,6) + '-' + this.displayText.slice(6)
-            console.log('as')
-        }
-        if(this.displayLength >= 11){
-            this.displayText = this.displayText.replace(/[-()]/gi,'')
-            console.log(this.displayLength)
+        else{
+            if(this.displayLength <= 3){
+                this.displayText = this.displayText.slice(0,3)
+            }
+            if(this.displayLength == 3 && this.displayLength < 8 && this.displayText.includes('-') === false){
+                this.displayText = this.displayText.slice(0,3) + '-' + this.displayText.slice(3,6)
+                console.log('run')
+            }
+            if(this.displayLength >= 8 && this.displayLength <= 11 && this.displayText.includes('(') === false){
+                this.displayText = this.displayText.replace('-','')
+                this.displayText = '(' + this.displayText.slice(0,3) +')' + this.displayText.slice(3,6) + '-' + this.displayText.slice(6)
+                console.log('as')
+            }
+            if(this.displayLength >= 11){
+                this.displayText = this.displayText.replace(/[-()]/gi,'')
+                console.log(this.displayLength)
+            }
         }
     }
     
