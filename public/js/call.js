@@ -14,27 +14,35 @@ class Phone{
     }
 
     phoneFormat(){
+        this.noSpecial = this.displayText.toString().replace(/[-() ]/gi,'')
         this.displayLength = this.displayText.toString().replace(/[-() ]/gi,'').length
         let firstNum = this.displayText.toString().split('').shift()
         console.log(this.displayLength)
         if(firstNum == 1){
             if(this.displayLength == 2){
-                this.displayText = '1' + this.displayText.slice(1)
+                this.displayText = '1' + this.noSpecial.slice(1)
                 console.log('first', firstNum )
             }
             if(this.displayLength == 3){
-                this.displayText = '1 (' + this.displayText.slice(1,3)
+                this.displayText = '1 (' + this.noSpecial.slice(1,3)
+                console.log(this.displayText)
                 console.log('two', firstNum)
             }
             if(this.displayLength == 4){
-                this.displayText = '1 (' + this.displayText.slice(1,3) + ') ' + this.displayText.slice(3,4)
-                console.log('as')
+                this.displayText = '1 (' + this.noSpecial.slice(1,4) + ') ' + this.noSpecial.slice(4,5)
+                console.log(this.displayText)
                 console.log('three', firstNum)
             }
-            if(this.displayLength >= 11){
-                this.displayText = this.displayText.replace(/[-()]/gi,'')
+            if(this.displayLength == 7){
+                this.displayText = '1 (' + this.noSpecial.slice(1,4) + ') ' + this.noSpecial.slice(4,7) + '-' + this.noSpecial.slice(8,11)
+                console.log(this.displayText)
+                console.log('three', firstNum)
+            }
+            if(this.displayLength >= 12){
+                this.displayText = this.displayText.replace(/[-() ]/gi,'')
                 console.log(this.displayLength)
             }
+            
         }
         else{
             if(this.displayLength <= 3){
