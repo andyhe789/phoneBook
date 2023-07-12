@@ -68,27 +68,27 @@ class Phone{
         this.displayLength = this.displayText.toString().replace(/[-() ]/gi,'').length
         this.noSpecial = this.displayText.toString().replace(/[-() ]/gi,'')
         let firstNum = this.displayText.toString().split('').shift()
-
+        //FIX DELETE BUTTON
         if(firstNum == 1){
             if(this.displayLength <= 2){
                 this.displayText = '1' + this.noSpecial.slice(1)
                 console.log('first', firstNum )
             }
-            else if(this.displayLength <= 3){
+            else if(this.displayLength == 3){
                 this.displayText = '1 (' + this.noSpecial.slice(1,3)
                 console.log(this.displayText)
                 console.log('two', firstNum)
             }
-            else if(this.displayLength <= 4){
-                this.displayText = '1 (' + this.noSpecial.slice(1,4) + ') ' + this.noSpecial.slice(4,5)
-                this.displayText = this.displayText.replace(/[)]/gi,'')
-                console.log(this.displayText)
+            else if(this.displayLength >= 4 && this.displayLength < 8){
+                let areaCode = this.noSpecial.substring(1,4)
+                this.displayText = '1 (' + areaCode + ') ' + this.noSpecial.slice(4,9)
+                console.log(this.noSpecial)
                 console.log('three', firstNum)
             }
-            else if(this.displayLength <= 7){
-                this.displayText = '1 (' + this.noSpecial.slice(1,4) + ') ' + this.noSpecial.slice(4,7) + '-' + this.noSpecial.slice(8,11)
+            else if(this.displayLength >= 8 && this.displayLength < 12){
+                this.displayText = '1 (' + this.noSpecial.slice(1,4) + ') ' + this.noSpecial.slice(4,7) + '-' + this.noSpecial.slice(7,12)
                 console.log(this.displayText)
-                console.log('three', firstNum)
+                console.log('four', firstNum)
             }
             else if(this.displayLength >= 12){
                 this.displayText = this.displayText.replace(/[-() ]/gi,'')
