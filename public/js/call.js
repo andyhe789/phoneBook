@@ -74,12 +74,18 @@ class Phone{
                 this.displayText = '1' + this.noSpecial.slice(1)
                 console.log('first', firstNum )
             }
-            else if(this.displayLength == 3){
+            else if(this.displayLength <= 3){
                 this.displayText = '1 (' + this.noSpecial.slice(1,3)
                 console.log(this.displayText)
                 console.log('two', firstNum)
             }
-            else if(this.displayLength >= 4 && this.displayLength < 8){
+            else if(this.displayLength == 4){
+                let areaCode = this.noSpecial.substring(1,4)
+                this.displayText = '1 (' + areaCode
+                console.log(this.noSpecial)
+                console.log('three3', firstNum)
+            }
+            else if(this.displayLength > 4 && this.displayLength < 8){
                 let areaCode = this.noSpecial.substring(1,4)
                 this.displayText = '1 (' + areaCode + ') ' + this.noSpecial.slice(4,9)
                 console.log(this.noSpecial)
