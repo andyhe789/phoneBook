@@ -3,6 +3,7 @@ class Phone{
         this.displayScreen = displayScreen
         this.displayText = ''
         this.displayLength = ''
+        this.backspaceClearAllInterval
     }
 
     clear(){
@@ -68,7 +69,6 @@ class Phone{
         this.displayLength = this.displayText.toString().replace(/[-() ]/gi,'').length
         this.noSpecial = this.displayText.toString().replace(/[-() ]/gi,'')
         let firstNum = this.displayText.toString().split('').shift()
-        //FIX DELETE BUTTON
         if(firstNum == 1){
             if(this.displayLength <= 2){
                 this.displayText = '1' + this.noSpecial.slice(1)
@@ -118,6 +118,17 @@ class Phone{
         }   
     }
 
+    clearAll(){
+        this.backspaceClearAllInterval = setTimeout(()=>{
+            this.displayText = ''
+            console.log('delete whole')
+        },3000)
+    }
+
+    cancelClearAll(){
+        clearTimeout(this.backspaceClearAllInterval)
+    }
+
     updateDisplay(){
         this.displayScreen.value = this.displayText
     }
@@ -147,3 +158,14 @@ backButton.addEventListener('click', ()=>{
     phone.updateDisplay()
 })
 
+backButton.addEventListener('mousedown', ()=>{
+    phone.clearAll()
+})
+
+backButton.addEventListener('mouseup', ()=>{
+    phone.cancelClearAll()
+})
+
+backButton.addEventListener('mouseout', ()=>{
+    phone.cancelClearAll()
+})
