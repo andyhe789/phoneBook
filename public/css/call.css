@@ -26,7 +26,13 @@ body{
 .numPad{
     text-decoration: none;
     list-style-type: none;
-    font-size: 5em;
+    font-size: 3em;
+}
+
+.numPad:nth-child(-6n+16),.numPad:nth-child(-6n+17),.numPad:nth-child(-6n+18){
+    padding-bottom: 1em;
+    justify-content: center;
+
 }
 
 .keypad, .phoneMenu{
@@ -35,9 +41,10 @@ body{
     padding: 0;
     grid-template-columns: repeat(3, 150px);
     justify-content: center;
-    gap: 1em 5%;
+    gap: 0 5%;
     outline: none;
 }
+
 .keypad > button{
     cursor: pointer;
     font-size: 5em;

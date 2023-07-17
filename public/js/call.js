@@ -118,6 +118,7 @@ class Phone{
         }   
     }
 
+    //next 3 functions deal with press and hold to delete all the text within the display screen 
     clearAll(){
         this.backspaceClearAllInterval = setTimeout(()=>{
             this.displayText = ''
@@ -135,7 +136,7 @@ class Phone{
 }
 
 
-const numButton = document.querySelectorAll('.numPad')
+const numButton = document.querySelectorAll('.pressableButton')
 const backButton = document.querySelector('#backspace')
 const callBut = document.querySelectorAll("#callButton")
 const displayScreen = document.querySelector('#display')
